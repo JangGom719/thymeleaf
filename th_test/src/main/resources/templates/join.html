@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원가입 양식</title>
+</head>
+<body>
+
+<form id="joinOk" th:action="@{/joinOk}" th:object="${joinOk}" method="post">
+
+
+<div>아이디</div>
+<div><input id="id" type="text" name="id"></div>
+
+
+<div>비밀번호</div>
+<div><input id="pw" type="password" name="pw"></div>
+
+<div>이름</div>
+<div><input id="name" type="text" name="name"></div>
+
+<div>전화번호</div>
+<div><input id="phone" type="text" name="phone"></div>
+
+<input type="submit" value="입력">
+
+<input type="button" value="뒤로가기" onclick="javascript:window.location='/home'"/>
+
+</form>
+
+
+</body>
+</html>

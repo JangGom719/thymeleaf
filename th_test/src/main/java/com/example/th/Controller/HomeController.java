@@ -22,7 +22,7 @@ public String main(Model model) {
 @RequestMapping(value="/text")
 public String text(HttpServletRequest request, Model model) {
 	
-	Dto member = new Dto("장상현",27,"개발자");
+	Dto member = new Dto("장상현",27,"개발자...?");
 	model.addAttribute("member" , member);
 	model.addAttribute("hello" , "hello");
 	
@@ -58,5 +58,53 @@ public String date(Model model) {
 public String property() {
 	return "property";
 }
+
+@RequestMapping(value="/home")
+public String table() {
+	return "home";
+}
+
+@RequestMapping(value="/loginOk")
+public String loginOk(HttpServletRequest request, Model model) {
+	HttpSession session = request.getSession();	
+	
+	return "board";
+}
+
+@RequestMapping(value="/join")
+public String join() {
+	return "join";
+}
+
+@RequestMapping(value="/joinOk")
+public String joinOk(HttpServletRequest request, Model model) {
+	
+	HttpSession session = request.getSession();	
+	String id = request.getParameter("id");
+	String pw = request.getParameter("pw");
+	String name = request.getParameter("name");
+	String phone = request.getParameter("phone");
+	memberDto dto = new memberDto(id, pw, name, phone);
+	session.setAttribute("id", id);
+	
+	return "board";
+}
+
+
+
+@RequestMapping(value="/info")
+public String info() {
+	return "info";
+}
+
+@RequestMapping(value="/board")
+public String board() {
+	
+	
+	
+	return "board";
+}
+
+
 
 }

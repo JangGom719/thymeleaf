@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+	
+<mapper namespace="com.example.th.Dao.Dao">
+	
+
+	<insert id="joinDao">
+		INSERT INTO member (id, pw, name, phone) VALUES (#{param1}, #{param2}, #{param3}, #{param4})
+	</insert>
+	
+	<insert id="tempinfoDao">
+		INSERT INTO info (id) VALUES(#{param1})
+	</insert>
+
+	<insert id="infoDao">
+		INSERT INTO info (gender, address, email) VALUES(#{param1}, #{param2}, #{param3}) WHERE id = #{param4}
+	</insert>
+
+	<insert id="boardDao">
+		INSERT INTO board (id, title, contents) VALUES(#{param1}, #{param2}, #{param3})
+	</insert>
+
+	
+</mapper>
