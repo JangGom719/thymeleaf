@@ -87,6 +87,7 @@ public String joinOk(HttpServletRequest request, Model model) {
 	memberDto dto = new memberDto(id, pw, name, phone);
 	session.setAttribute("id", id);
 	
+	
 	return "board";
 }
 
