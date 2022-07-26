@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>링크를 타고 온 페이지</title>
+</head>
+<body>
+
+<div th:text="${hello}"></div>
+
+<tr th:object="${member}">
+	<td>이름 : <span th:text="*{name}"></span></td></br>
+	<td>나이 : <span th:text="*{age}"></span></td></br>
+	<td>직업 : <span th:text="*{job}"></span></td>
+</tr>
+
+<form th:action="@{/form}" th:object="${Form}" method="post">
+
+<tr>
+<td>과목</td>
+<td><input id="subject" type="text" name="subject"></td>
+</tr>
+
+<br>
+
+<tr>
+<td>점수</td>									
+<td><input id="score" type="text" name="score"></td>
+</tr>
+
+<input type="submit" value="입력">
+
+</form>
+
+
+
+</body>
+</html>

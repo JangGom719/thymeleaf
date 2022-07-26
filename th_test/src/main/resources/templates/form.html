@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>폼 입력</title>
+</head>
+<body>
+
+    <input type="text" id="subject" th:value="${subject}"/><br>
+    <input type="text" id="score" th:value="${score}"/><br>
+   
+   <span th:if="${score}> 50" th:text="|${subject} 잘했어요|"></span> 
+   <span th:unless="${score} > 50" th:text="|${subject} 못했어요|"></span> 
+
+
+	<td th:switch="${score}">
+	
+	<span th:case="0">재시험</span>
+    <span th:case="*">합격</span>
+    
+	</td>
+	
+	<tr>
+	<input type="button" value="뒤로가기" onclick="javascript:window.location='/text'"/>
+	</tr>
+
+<body>
+</html>
