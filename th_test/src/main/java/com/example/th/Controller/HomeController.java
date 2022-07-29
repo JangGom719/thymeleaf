@@ -6,7 +6,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import com.example.th.Dto.*;
 
 
@@ -106,6 +109,15 @@ public String board() {
 	return "board";
 }
 
+@RequestMapping(value="/openLayers")
+public String openLayers() {
+	return "openLayers";
+}
 
+
+@GetMapping("request")
+public String request(@RequestParam("a") String a, @RequestParam("b") String b) {
+	return a + "" + b;
+}
 
 }
